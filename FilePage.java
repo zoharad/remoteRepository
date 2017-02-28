@@ -15,6 +15,7 @@ public class FilePage {
 	private static int length;
 	private static String modifiedTime;
 	private static String type;
+	private static String externalLink;
 	private static String[] outLink = new String[100];
 	public static void Openfile() throws IOException
 	{
@@ -54,12 +55,11 @@ public class FilePage {
 			case 5:
 				break;
 			case 6:
+				externalLink = wValue[i];
 				break;
 			default:
-				//(int j=0; j<10;j++){
-				
-					outLink[k]= wValue[i];
-					k++;
+				outLink[k]= wValue[i];
+				k++;
 				break;
 			
 			}
@@ -69,7 +69,7 @@ public class FilePage {
 		System.out.println("3-length: "+ length);
 		System.out.println("4-modified_time: "+ modifiedTime);
 		System.out.println("5-type: "+ type);
-		
+		System.out.println("7-externalLink: "+ externalLink);
 		for(int j=0; j<k;j++)
 		{
 			System.out.println(j +": " +outLink[j]);
